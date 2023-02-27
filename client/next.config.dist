@@ -1,0 +1,16 @@
+module.exports = {
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
+  optimizeFonts: false,
+  swcMinify: true,
+  reactStrictMode: true,
+  publicRuntimeConfig: {
+    APP_NAME: "YOUR APP NAME",
+    API_DEVELOPMENT: "YOUR API DEVELOPMENT",
+    API_PRODUCTION: "YOUR URI TO PRODUCTION",
+    PRODUCTION: false,
+    DOMAIN_DEVELOPMENT: "YOUR URI DEVELOPMENT",
+    DOMAIN_PRODUCTION: "YOUR URI PRODUCTION",
+  },
+};
