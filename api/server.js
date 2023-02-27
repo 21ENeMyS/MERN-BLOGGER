@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const path = require("path");
 // dotenv tidak boleh di bawah !process.env
 require("dotenv").config();
 const port = process.env.PORT || 3000;
@@ -20,6 +21,10 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "./client")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/pages/_document.js"));
+});
 
 // routes
 app.use("/api", authApi);
